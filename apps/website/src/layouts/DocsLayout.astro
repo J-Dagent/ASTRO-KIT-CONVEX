@@ -1,0 +1,20 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import { SiteNavigation } from "../islands/SiteNavigation";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+  <div class="min-h-screen bg-background">
+    <SiteNavigation client:load />
+    <main class="pt-16">
+      <slot />
+    </main>
+  </div>
+</BaseLayout>

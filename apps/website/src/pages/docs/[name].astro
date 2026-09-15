@@ -1,0 +1,23 @@
+---
+import { readFile } from "node:fs/promises";
+import { resolve } from "node:path";
+import DocsLayout from "../../layouts/DocsLayout.astro";
+import { MarkdownDocument } from "../../components/docs/markdown-document";
+import { documentationPages } from "../../components/docs/docs-navigation";
+import { CodeCopyEnhancer } from "../../islands/CodeCopyEnhancer";
+
+export function getStaticPaths() {
+  return documentationPages.map(({ name }) => ({ params: { name } }));
+}
+
+const { name } = Astro.params;
+if (!name || !/^[a-z0-9-]+$/.test(name)) {
+  throw new Error("Invalid documentation page name.");
+}
+const content = await readFile(resolve("public", "docs", `${name}.md`), "utf8");
+---
+
+<DocsLayout title={`${name} | Astro Kit Convex`}>
+  <MarkdownDocument content={content} name={name} />
+  <CodeCopyEnhancer client:load />
+</DocsLayout>

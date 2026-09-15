@@ -1,0 +1,20 @@
+---
+import { z } from "zod";
+import AppLayout from "../../../../layouts/AppLayout.astro";
+import { AppShell } from "../../../../islands/AppShell";
+
+const result = z.string().min(1).max(255).safeParse(Astro.url.searchParams.get("checkout_id"));
+const checkoutId = result.success ? result.data : undefined;
+const checkoutIdError = result.success
+  ? undefined
+  : "L’identifiant de checkout est absent ou invalide.";
+---
+
+<AppLayout title="Confirmation du paiement">
+  <AppShell
+    client:only="react"
+    page="checkout-success"
+    checkoutId={checkoutId}
+    checkoutIdError={checkoutIdError}
+  />
+</AppLayout>

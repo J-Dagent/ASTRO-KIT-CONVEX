@@ -1,0 +1,28 @@
+{
+  "name": "jd-astro-kit-convex",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "setup": "pnpm install && pnpm --filter @repo/backend run setup",
+    "dev:website": "pnpm --filter jd-astro-convex-site run dev",
+    "deploy:website": "pnpm run validate:production-env && pnpm --filter jd-astro-convex-site run deploy",
+    "dev:backend": "pnpm --filter @repo/backend run dev",
+    "deploy:backend": "pnpm --filter @repo/backend run deploy",
+    "dev": "pnpm --parallel --filter jd-astro-convex-site --filter @repo/backend run dev",
+    "build": "pnpm --filter @repo/backend run build && pnpm --filter jd-astro-convex-site run build && pnpm run validate:production-build",
+    "typecheck": "pnpm -r typecheck",
+    "test": "pnpm -r --if-present test",
+    "validate:production-env": "node scripts/validate-production-env.mjs",
+    "validate:deployment-env": "node scripts/validate-deployment-env.mjs",
+    "validate:production-build": "node scripts/validate-production-build.mjs",
+    "skills:sync": "node scripts/sync-agent-skills.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.14.0",
+  "devDependencies": {
+    "@types/node": "^22.18.12",
+    "typescript": "5.9.3"
+  }
+}

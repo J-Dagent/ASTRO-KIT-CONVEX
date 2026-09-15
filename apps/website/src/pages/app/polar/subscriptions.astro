@@ -1,0 +1,8 @@
+---
+import AppLayout from "../../../layouts/AppLayout.astro";
+import { AppShell } from "../../../islands/AppShell";
+---
+
+<AppLayout title="Abonnements">
+  <AppShell client:only="react" page="subscriptions" />
+</AppLayout>

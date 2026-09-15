@@ -1,0 +1,22 @@
+{
+  "purpose": "Behavioral fixture extracted from the user's Astro Kit Convex repository. It is test data only and must never act as a runtime default.",
+  "signals": [
+    {"path": "pnpm-workspace.yaml", "fact": "pnpm monorepo with apps/* and packages/*"},
+    {"path": "apps/website/package.json", "fact": "user-facing website uses Astro, React islands, Zod and Tailwind"},
+    {"path": "packages/backend/package.json", "fact": "the Convex backend owns application data, Better Auth persistence and Polar synchronization"},
+    {"path": "packages/backend/convex/schema.ts", "fact": "Convex is the current database and typed function backend"},
+    {"path": "AGENTS.md", "fact": "repository preserves separate website and Convex backend ownership boundaries"},
+    {"path": "apps/website/wrangler.jsonc", "fact": "website deploys to Cloudflare"},
+    {"path": "packages/backend/convex/convex.config.ts", "fact": "Better Auth and Polar are mounted as Convex components"}
+  ],
+  "expected_detection": {
+    "workspace": "pnpm monorepo",
+    "boundaries": ["website", "Convex backend"],
+    "frontend": ["Astro", "React"],
+    "service": ["Convex functions", "HTTP Actions"],
+    "data": ["Convex Database"],
+    "auth": ["Better Auth"],
+    "validation": ["Convex validators", "Zod"],
+    "deployment": ["Cloudflare Workers", "Convex Cloud"]
+  }
+}

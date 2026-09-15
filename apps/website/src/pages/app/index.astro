@@ -1,0 +1,8 @@
+---
+import AppLayout from "../../layouts/AppLayout.astro";
+import { AppShell } from "../../islands/AppShell";
+---
+
+<AppLayout title="Tableau de bord">
+  <AppShell client:only="react" page="dashboard" />
+</AppLayout>
