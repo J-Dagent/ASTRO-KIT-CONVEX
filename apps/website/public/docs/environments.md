@@ -1,12 +1,13 @@
 # Environments and secrets
 
-## Local development
+## Local application development
 
-Local Convex runs on loopback addresses. `pnpm run setup` creates these values in `apps/website/.env.local` without overwriting an existing file:
+The Astro application runs locally while connecting to a Convex Cloud development deployment. After that deployment is connected, `pnpm run setup` can create these values in `apps/website/.env.local` without overwriting an existing file:
 
 ```bash
-VITE_CONVEX_URL="http://localhost:3210"
-VITE_CONVEX_SITE_URL="http://localhost:3211"
+PUBLIC_CONVEX_URL="https://your-deployment.convex.cloud"
+PUBLIC_CONVEX_SITE_URL="https://your-deployment.convex.site"
+PUBLIC_SITE_URL="http://localhost:3000"
 ```
 
 All `.env` and `.env.*` files remain ignored except committed example files. Never copy credentials into a tracked file.
@@ -32,11 +33,11 @@ pnpm --filter @repo/backend exec convex env set POLAR_SERVER production
 The frontend needs the two public endpoints of the same Convex deployment:
 
 ```bash
-VITE_CONVEX_URL="https://your-deployment.convex.cloud"
-VITE_CONVEX_SITE_URL="https://your-deployment.convex.site"
+PUBLIC_CONVEX_URL="https://your-deployment.convex.cloud"
+PUBLIC_CONVEX_SITE_URL="https://your-deployment.convex.site"
 ```
 
-Production builds read these values only from the process environment. They do not load the local Convex values from `.env.local`. `pnpm run validate:production-env` rejects missing values, HTTP URLs, and loopback hosts.
+Production builds read these values only from the process environment. They do not load `.env.local`. A frontend may be deployed before Convex is connected; `/app` then reports that configuration is pending. When either URL is supplied, `pnpm run validate:production-env` requires both HTTPS Cloud endpoints.
 
 ## Production release configuration
 
@@ -54,10 +55,10 @@ Add these non-secret environment variables:
 - `CLOUDFLARE_ACCOUNT_ID`
 - `GOOGLE_CLIENT_ID`
 - `SITE_URL`
-- `VITE_CONVEX_URL`
-- `VITE_CONVEX_SITE_URL`
+- `PUBLIC_CONVEX_URL`
+- `PUBLIC_CONVEX_SITE_URL`
 
-The `VITE_CONVEX_*` values identify public Convex endpoints. Browser code must know them, so treating them as secrets adds no protection. The Convex deploy key must belong to the production deployment identified by those two public URLs.
+The `PUBLIC_CONVEX_*` values identify public Convex endpoints. Browser code must know them, so treating them as secrets adds no protection. `CONVEX_DEPLOYMENT` selects the connected deployment, while `CONVEX_DEPLOY_KEY` enables non-interactive CI access and must remain secret.
 
 Your chosen runner may be GitHub Actions, GitLab CI, Cloudflare, another CI service, or a controlled manual shell. Map the names above using that system's native secret and variable storage; never commit their values. Run `pnpm run validate:deployment-env` before any production mutation so missing private configuration stops the release early.
 

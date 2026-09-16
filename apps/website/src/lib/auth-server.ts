@@ -8,9 +8,9 @@ type Fetcher = (
 
 function parseConvexSiteUrl(value: string): URL {
   const url = new URL(value);
-  if (url.hostname.endsWith(".convex.cloud")) {
+  if (url.protocol !== "https:" || !url.hostname.endsWith(".convex.site")) {
     throw new Error(
-      "VITE_CONVEX_SITE_URL must be a Convex Site URL, not a Convex cloud API URL.",
+      "PUBLIC_CONVEX_SITE_URL must be an HTTPS Convex Site URL.",
     );
   }
   return url;
@@ -62,16 +62,30 @@ export async function forwardAuthRequest(
 }
 
 export function handleAuthRequest(request: Request): Promise<Response> {
-  return forwardAuthRequest(request, import.meta.env.VITE_CONVEX_SITE_URL);
+  const siteUrl = import.meta.env.PUBLIC_CONVEX_SITE_URL;
+  if (!siteUrl) {
+    return Promise.resolve(
+      Response.json(
+        { error: "Convex Cloud is not configured" },
+        { status: 503 },
+      ),
+    );
+  }
+  return forwardAuthRequest(request, siteUrl);
 }
 
 export async function createAuthenticatedConvexClient(
   request: Request,
 ): Promise<ConvexHttpClient> {
-  const siteUrl = parseConvexSiteUrl(import.meta.env.VITE_CONVEX_SITE_URL);
+  const convexSiteUrl = import.meta.env.PUBLIC_CONVEX_SITE_URL;
+  const convexUrl = import.meta.env.PUBLIC_CONVEX_URL;
+  if (!convexSiteUrl || !convexUrl) {
+    throw new Error("Convex Cloud is not configured.");
+  }
+  const siteUrl = parseConvexSiteUrl(convexSiteUrl);
   const headers = forwardedHeaders(request, siteUrl);
   const { token } = await getToken(siteUrl.toString(), headers);
-  const client = new ConvexHttpClient(import.meta.env.VITE_CONVEX_URL);
+  const client = new ConvexHttpClient(convexUrl);
   if (token) client.setAuth(token);
   return client;
 }

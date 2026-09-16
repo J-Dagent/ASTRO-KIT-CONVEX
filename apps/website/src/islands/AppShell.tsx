@@ -19,7 +19,8 @@ import { ThemeProvider } from "@/components/theme";
 import { authClient } from "@/lib/auth-client";
 import { ConvexRealtimeDemo } from "./ConvexRealtimeDemo";
 
-const convexClient = new ConvexReactClient(import.meta.env.VITE_CONVEX_URL);
+const convexUrl = import.meta.env.PUBLIC_CONVEX_URL;
+const convexClient = convexUrl ? new ConvexReactClient(convexUrl) : null;
 
 type AppPage = "dashboard" | "subscriptions" | "checkout-success";
 
@@ -190,6 +191,22 @@ function AuthenticatedApplication(props: AppShellProps) {
 }
 
 export function AppShell(props: AppShellProps) {
+  if (!convexClient) {
+    return (
+      <ThemeProvider defaultTheme="system" enableSystem>
+        <div className="flex min-h-screen items-center justify-center bg-background px-6">
+          <div className="max-w-lg space-y-3 text-center">
+            <AlertCircle className="mx-auto h-12 w-12 text-muted-foreground" />
+            <h1 className="text-2xl font-semibold">Convex Cloud n’est pas encore configuré</h1>
+            <p className="text-muted-foreground">
+              Ajoutez les URLs publiques du deployment Convex Cloud pour activer cette zone.
+            </p>
+          </div>
+        </div>
+      </ThemeProvider>
+    );
+  }
+
   return (
     <ThemeProvider defaultTheme="system" enableSystem>
       <ConvexBetterAuthProvider

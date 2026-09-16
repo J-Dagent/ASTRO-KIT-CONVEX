@@ -130,4 +130,4 @@ Public routes never require Better Auth or a Convex token. A public React island
 
 Each public function owns its argument validation and abuse controls. Add rate limiting or bot verification when a real form, agent, or paid operation needs it. Do not add a second provider or a generic anonymous persistence layer.
 
-`VITE_CONVEX_URL` and `VITE_CONVEX_SITE_URL` are public deployment endpoints. Browser bundles must contain them, so configure them as ordinary build variables. Credentials such as `CONVEX_DEPLOY_KEY`, OAuth client secrets, Better Auth secrets, and Polar tokens remain secrets.
+`PUBLIC_CONVEX_URL` and `PUBLIC_CONVEX_SITE_URL` are public deployment endpoints. Browser bundles must contain them, so configure them as ordinary Astro build variables. Credentials such as `CONVEX_DEPLOY_KEY`, OAuth client secrets, Better Auth secrets, and Polar tokens remain secrets.

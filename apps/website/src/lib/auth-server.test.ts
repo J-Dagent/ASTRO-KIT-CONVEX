@@ -76,7 +76,7 @@ describe("Astro Better Auth bridge", () => {
         new Request("https://astro-kit.example/api/auth/get-session"),
         "https://deployment.convex.cloud",
       ),
-    ).rejects.toThrow("Convex Site URL");
+    ).rejects.toThrow("HTTPS Convex Site URL");
   });
 
   it("returns a safe gateway error when the Convex auth route is unavailable", async () => {
@@ -84,7 +84,7 @@ describe("Astro Better Auth bridge", () => {
       new Request("https://astro-kit.example/api/auth/get-session"),
       "https://deployment.convex.site",
       async () => {
-        throw new TypeError("connect ECONNREFUSED 127.0.0.1");
+        throw new TypeError("network unavailable");
       },
     );
 

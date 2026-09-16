@@ -1,9 +1,19 @@
 const expectedHosts = {
-  VITE_CONVEX_URL: ".convex.cloud",
-  VITE_CONVEX_SITE_URL: ".convex.site",
+  PUBLIC_CONVEX_URL: ".convex.cloud",
+  PUBLIC_CONVEX_SITE_URL: ".convex.site",
 };
 
 const errors = [];
+const configuredValues = Object.keys(expectedHosts).filter((name) =>
+  process.env[name]?.trim(),
+);
+
+if (configuredValues.length === 0) {
+  console.log(
+    "Convex Cloud is not connected yet; the frontend will deploy in disconnected mode.",
+  );
+  process.exit(0);
+}
 
 for (const [name, suffix] of Object.entries(expectedHosts)) {
   const value = process.env[name];
@@ -31,4 +41,4 @@ if (errors.length > 0) {
   process.exit(1);
 }
 
-console.log("Production Convex URLs are valid.");
+console.log("Production Convex Cloud URLs are valid.");

@@ -17,13 +17,13 @@ Convex owns Better Auth session data while the existing login, account, and logo
 
 ## Required environment variables
 
-`pnpm run setup` creates `apps/website/.env.local` with the local Convex URLs when that file does not already exist. It never overwrites an existing local environment file. For a manual or production configuration, set:
+After a Convex Cloud deployment is connected, `pnpm run setup` can create `apps/website/.env.local` when that file does not already exist. It never overwrites an existing local environment file. For a manual or production configuration, set:
 
 ```bash
 # apps/website/.env.local
-VITE_CONVEX_URL="https://your-deployment.convex.cloud"
-VITE_CONVEX_SITE_URL="https://your-deployment.convex.site"
-VITE_SITE_URL="http://localhost:3000"
+PUBLIC_CONVEX_URL="https://your-deployment.convex.cloud"
+PUBLIC_CONVEX_SITE_URL="https://your-deployment.convex.site"
+PUBLIC_SITE_URL="http://localhost:3000"
 ```
 
 Set secrets on the Convex development deployment. Do not put their real values in repository files.
@@ -117,7 +117,7 @@ Ordinary client-side operations use `useQuery`, `useMutation`, and `useAction` f
 - A Google provider warning means `GOOGLE_CLIENT_ID` or `GOOGLE_CLIENT_SECRET` is missing on the active Convex deployment.
 - A callback mismatch means the Google console URI does not exactly match the application-domain `/api/auth/callback/google` URL.
 - A browser session with failed Convex queries usually means the Convex token has not loaded or the frontend points at a different deployment.
-- A proxy error usually means `VITE_CONVEX_SITE_URL` is missing or uses the `.convex.cloud` URL instead of `.convex.site`.
+- A proxy error usually means `PUBLIC_CONVEX_SITE_URL` is missing or uses the `.convex.cloud` URL instead of `.convex.site`.
 
 ## Local verification
 

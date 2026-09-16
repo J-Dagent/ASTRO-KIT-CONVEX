@@ -19,7 +19,6 @@ export default defineConfig({
   server: { port: 3000 },
   vite: {
     envDir: isBuild ? false : undefined,
-    envPrefix: ["VITE_", "PUBLIC_"],
     plugins: [tailwindcss()],
   },
 });

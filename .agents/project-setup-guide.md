@@ -22,7 +22,7 @@ Ask whether the user is setting up local development or production. Confirm Node
 
 Never read, print, overwrite, or commit secret values. Ask the user to configure them through Convex, their deployment platform, or their local shell.
 
-## 2. Start local development
+## 2. Connect Convex Cloud for local development
 
 From the repository root, run:
 
@@ -30,12 +30,12 @@ From the repository root, run:
 pnpm run setup
 ```
 
-This installs dependencies, starts Convex setup once, generates the typed API, and creates `apps/website/.env.local` only when the file does not exist. The generated frontend values are:
+This installs dependencies, lets the operator connect a Convex Cloud development deployment, generates the typed API, and creates `apps/website/.env.local` only when the file does not exist. Do not run it until the operator is ready to authenticate or provide deployment credentials. The generated frontend values are:
 
 ```bash
-VITE_CONVEX_URL="http://localhost:3210"
-VITE_CONVEX_SITE_URL="http://localhost:3211"
-VITE_SITE_URL="http://localhost:3000"
+PUBLIC_CONVEX_URL="https://your-deployment.convex.cloud"
+PUBLIC_CONVEX_SITE_URL="https://your-deployment.convex.site"
+PUBLIC_SITE_URL="http://localhost:3000"
 ```
 
 If `.env.local` already exists, preserve it. Ask the user to add missing values manually.
@@ -47,7 +47,7 @@ pnpm run dev:backend
 pnpm run dev:website
 ```
 
-Local Convex URLs must stay local and untracked.
+The application stays local on port 3000 while its backend is hosted by Convex Cloud. Loopback Convex deployments are rejected.
 
 ## 3. Configure Better Auth
 
@@ -97,11 +97,11 @@ Then verify `/`, `/docs`, sign-in, `/app`, sign-out, and one protected Convex qu
 Production must use Convex Cloud. Supply these public build variables:
 
 ```bash
-VITE_CONVEX_URL="https://your-deployment.convex.cloud"
-VITE_CONVEX_SITE_URL="https://your-deployment.convex.site"
+PUBLIC_CONVEX_URL="https://your-deployment.convex.cloud"
+PUBLIC_CONVEX_SITE_URL="https://your-deployment.convex.site"
 ```
 
-`VITE_CONVEX_*` values are public endpoints, not secrets. Configure server secrets on the matching Convex Cloud deployment. A non-interactive release also needs `CONVEX_DEPLOY_KEY`, `CLOUDFLARE_API_TOKEN`, and `CLOUDFLARE_ACCOUNT_ID` in the chosen CI/CD system.
+`PUBLIC_CONVEX_*` values are public endpoints, not secrets. Configure server secrets on the matching Convex Cloud deployment. A non-interactive release also needs `CONVEX_DEPLOY_KEY`, `CLOUDFLARE_API_TOKEN`, and `CLOUDFLARE_ACCOUNT_ID` in the chosen CI/CD system.
 
 Run `pnpm run validate:deployment-env` before a production mutation. The release owner should then run the normal validation, deploy Convex, build with the production URLs, and deploy the Cloudflare Worker. Use `pnpm deploy:backend` and `pnpm deploy:website` only after the user explicitly requests deployment.
 

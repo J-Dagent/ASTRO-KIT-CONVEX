@@ -8,11 +8,11 @@
     "./convex/_generated/dataModel": "./convex/_generated/dataModel.ts"
   },
   "scripts": {
-    "setup": "convex dev --once && node scripts/sync-app-env.mjs",
+    "setup": "node scripts/assert-cloud-config.mjs && convex dev --once && node scripts/sync-app-env.mjs",
     "sync:app-env": "node scripts/sync-app-env.mjs",
-    "dev": "convex dev",
-    "deploy": "convex deploy",
-    "codegen": "convex codegen",
+    "dev": "node scripts/assert-cloud-config.mjs && convex dev",
+    "deploy": "node scripts/assert-cloud-config.mjs && convex deploy",
+    "codegen": "node scripts/assert-cloud-config.mjs && convex codegen",
     "build": "tsc --noEmit",
     "typecheck": "tsc --noEmit",
     "test": "vitest run"

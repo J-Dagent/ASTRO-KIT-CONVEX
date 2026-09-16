@@ -25,7 +25,7 @@ install
 
 Do not configure a second automatic deploy for the same production environment. Competing systems can publish different commits or build with different variables.
 
-Convex uses `CONVEX_DEPLOY_KEY` for non-interactive authentication, while Wrangler uses `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` in CI. An operator running Wrangler manually may use an authenticated local session. `VITE_CONVEX_URL`, `VITE_CONVEX_SITE_URL`, `SITE_URL`, `GOOGLE_CLIENT_ID`, `POLAR_SERVER`, and `CLOUDFLARE_ACCOUNT_ID` are configuration rather than application secrets.
+Convex uses `CONVEX_DEPLOY_KEY` for non-interactive authentication, while Wrangler uses `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` in CI. An operator running Wrangler manually may use an authenticated local session. `PUBLIC_CONVEX_URL`, `PUBLIC_CONVEX_SITE_URL`, `SITE_URL`, `GOOGLE_CLIENT_ID`, `POLAR_SERVER`, and `CLOUDFLARE_ACCOUNT_ID` are configuration rather than application secrets.
 
 ## Provider-neutral commands
 
@@ -41,7 +41,7 @@ pnpm deploy:backend
 pnpm deploy:website
 ```
 
-Before the first release, or whenever server-side values change, configure the Convex Cloud environment using the commands in [Environments](/docs/environments). `pnpm deploy:backend` uses an interactive Convex login when run by an operator or `CONVEX_DEPLOY_KEY` when supplied by CI. `pnpm deploy:website` validates the public production Convex URLs before Wrangler uploads the generated artifact.
+Before the first connected release, or whenever server-side values change, configure the Convex Cloud environment using the commands in [Environments](/docs/environments). `pnpm deploy:backend` uses an interactive Convex login when run by an operator or `CONVEX_DEPLOY_KEY` when supplied by CI. `pnpm deploy:website` accepts a disconnected frontend when neither public Convex URL is present, and validates both Cloud endpoints as soon as either one is supplied.
 
 The build itself runs the artifact leak check. It fails if generated output contains loopback Convex endpoints or known private variable values. Never edit `dist` or `.wrangler` output manually; rebuild from source instead.
 

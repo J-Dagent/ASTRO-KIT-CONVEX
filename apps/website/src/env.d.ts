@@ -1,9 +1,9 @@
 /// <reference types="astro/client" />
 
 interface ImportMetaEnv {
-  readonly VITE_CONVEX_URL: string;
-  readonly VITE_CONVEX_SITE_URL: string;
-  readonly VITE_SITE_URL?: string;
+  readonly PUBLIC_CONVEX_URL?: string;
+  readonly PUBLIC_CONVEX_SITE_URL?: string;
+  readonly PUBLIC_SITE_URL?: string;
 }
 
 interface ImportMeta {

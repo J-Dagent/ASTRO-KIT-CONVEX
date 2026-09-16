@@ -3,8 +3,8 @@ const publicConfig = [
   "GOOGLE_CLIENT_ID",
   "POLAR_SERVER",
   "SITE_URL",
-  "VITE_CONVEX_URL",
-  "VITE_CONVEX_SITE_URL",
+  "PUBLIC_CONVEX_URL",
+  "PUBLIC_CONVEX_SITE_URL",
 ];
 
 const privateConfig = [
@@ -30,8 +30,8 @@ if (
 
 const expectedHostSuffix = {
   SITE_URL: undefined,
-  VITE_CONVEX_URL: ".convex.cloud",
-  VITE_CONVEX_SITE_URL: ".convex.site",
+  PUBLIC_CONVEX_URL: ".convex.cloud",
+  PUBLIC_CONVEX_SITE_URL: ".convex.site",
 };
 
 for (const [name, suffix] of Object.entries(expectedHostSuffix)) {

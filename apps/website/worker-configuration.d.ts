@@ -3,8 +3,8 @@
 // Runtime types generated with workerd@1.20260820.1 2025-09-02 nodejs_compat
 interface __BaseEnv_Env {
 	MY_VAR: "Hello from Cloudflare";
-	VITE_CONVEX_URL: string;
-	VITE_CONVEX_SITE_URL: string;
+	PUBLIC_CONVEX_URL: string;
+	PUBLIC_CONVEX_SITE_URL: string;
 	VITE_SITE_URL: string;
 	POSTHOG_API_KEY: string;
 	POSTHOG_HOST: string;
@@ -20,7 +20,7 @@ type StringifyValues<EnvType extends Record<string, unknown>> = {
 	[Binding in keyof EnvType]: EnvType[Binding] extends string ? EnvType[Binding] : string;
 };
 declare namespace NodeJS {
-	interface ProcessEnv extends StringifyValues<Pick<Cloudflare.Env, "MY_VAR" | "VITE_CONVEX_URL" | "VITE_CONVEX_SITE_URL" | "VITE_SITE_URL" | "POSTHOG_API_KEY" | "POSTHOG_HOST">> {}
+	interface ProcessEnv extends StringifyValues<Pick<Cloudflare.Env, "MY_VAR" | "PUBLIC_CONVEX_URL" | "PUBLIC_CONVEX_SITE_URL" | "PUBLIC_SITE_URL" | "POSTHOG_API_KEY" | "POSTHOG_HOST">> {}
 }
 
 // Begin runtime types
