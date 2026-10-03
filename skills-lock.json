@@ -241,6 +241,34 @@
       "syncedAt": "2026-08-23",
       "computedHash": "c17f47f0cb85ae4abeb77bb594a4e8c123010d18cee2537cb2de8565a65129b4"
     },
+    "cro-delivery-spec": {
+      "source": "project-local",
+      "sourceType": "local",
+      "skillPath": ".agents/skills/cro-delivery-spec/SKILL.md",
+      "syncedAt": "2026-10-03",
+      "computedHash": "8097cf366dd5958156ad7a2031f467ea332c284e2e7f78e6fcd4d44c99fcd050"
+    },
+    "cro-experience-audit": {
+      "source": "project-local",
+      "sourceType": "local",
+      "skillPath": ".agents/skills/cro-experience-audit/SKILL.md",
+      "syncedAt": "2026-10-03",
+      "computedHash": "acb1e06f23a81ece9f28c82c047c511d586052e405ab1fa04a885d3c7646153a"
+    },
+    "cro-web-implement": {
+      "source": "project-local",
+      "sourceType": "local",
+      "skillPath": ".agents/skills/cro-web-implement/SKILL.md",
+      "syncedAt": "2026-10-03",
+      "computedHash": "fd58006d40072b5ef4e5d8880b9f6c482645f26e0340a770537c08757b3abc8b"
+    },
+    "cro-web-validate": {
+      "source": "project-local",
+      "sourceType": "local",
+      "skillPath": ".agents/skills/cro-web-validate/SKILL.md",
+      "syncedAt": "2026-10-03",
+      "computedHash": "b3dbfcea270b0167fdf337bad9859804a301f4174fa3444636bacc238d9068b0"
+    },
     "diagnosing-bugs": {
       "source": "mattpocock/skills",
       "sourceType": "github",
@@ -290,6 +318,13 @@
       "sourceType": "github",
       "skillPath": "skills/engineering/implement/SKILL.md",
       "computedHash": "2139cfedf24791adbc839aaab6019cff158af1e28bfead020ec6e0ce01b3e74d"
+    },
+    "implement-forms": {
+      "source": "project-local",
+      "sourceType": "local",
+      "skillPath": ".agents/skills/implement-forms/SKILL.md",
+      "syncedAt": "2026-10-03",
+      "computedHash": "2222d5fa5df3a7508764bbc67ee95db5e5d75caa42b94168f5040eea105d8fab"
     },
     "improve": {
       "source": "shadcn/improve",
