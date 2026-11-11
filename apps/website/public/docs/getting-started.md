@@ -11,7 +11,7 @@ Public pages are pre-rendered and request no authentication session. The private
 
 ## Install
 
-Use Node.js 22 and pnpm 10.14.0, then install from the repository root:
+Use Node.js 24 LTS (the version in `.nvmrc`, also the Cloudflare Workers Builds default; 22.23.4 or later is the minimum) and pnpm 10.34.9, then install from the repository root:
 
 ```bash
 pnpm install
