@@ -5,19 +5,19 @@
       "source": "vercel-labs/agent-browser",
       "sourceType": "github",
       "skillPath": "skills/agent-browser/SKILL.md",
-      "commit": "4f2b61ad674ea8e7928d841a0f1b32842109b1cb",
+      "commit": "2f533ec7d74cd9b1925cc86fb0c6872b03745be0",
       "license": "Apache-2.0",
-      "syncedAt": "2026-11-11",
-      "computedHash": "60a9cbe5af176150582c019e16e5d3703a41bb02d88438e881349876120d7944"
+      "syncedAt": "2026-11-13",
+      "computedHash": "13d4c36e4147478e4749ece397f7a37c7ed04cd2697d81f37ba3c241431e085f"
     },
     "blast-radius": {
       "source": "cursor/plugins",
       "sourceType": "github",
-      "skillPath": "pstack/skills/blast-radius/SKILL.md",
-      "commit": "46125561306434d8a1d7745d540d8932ab0cd2a2",
+      "skillPath": "harness/pstack/claude-code/skills/blast-radius/SKILL.md",
+      "commit": "05b49176bc9e00d8e9e3dbf136fa76631cd6468a",
       "license": "MIT",
-      "syncedAt": "2026-08-23",
-      "computedHash": "b060df3ca85803eabbce9fab53f5cc024ca8d784bdde5513c1c1a784947523f8"
+      "syncedAt": "2026-11-13",
+      "computedHash": "e59c40c6882599243a2988e8001e968d0e92ae982273ed3369eec58c4b956d30"
     },
     "code-review": {
       "source": "mattpocock/skills",
@@ -59,7 +59,10 @@
       "source": "get-convex/agent-skills",
       "sourceType": "github",
       "skillPath": "skills/convex-agent/SKILL.md",
-      "computedHash": "c7bd33a121bcac7f394e82b03bfb5e6e00c627dbe9882b0fd2b5d71a7bd6c09d"
+      "commit": "f60629d7c6c1f27eb58a56260546d2445049274d",
+      "license": "MIT",
+      "syncedAt": "2026-11-13",
+      "computedHash": "ac81a09f9c6f13f90a816fb66d33f02e15ba32a931f3c72033ad54b2f0682872"
     },
     "convex-auth": {
       "source": "get-convex/agent-skills",
@@ -71,7 +74,10 @@
       "source": "get-convex/agent-skills",
       "sourceType": "github",
       "skillPath": "skills/convex-authz/SKILL.md",
-      "computedHash": "c01893193481995d372e8f1e6dd1ef7289bb9e029395af7ab90cc68b635d6606"
+      "commit": "f60629d7c6c1f27eb58a56260546d2445049274d",
+      "license": "MIT",
+      "syncedAt": "2026-11-13",
+      "computedHash": "b8f20fe9a70ccfb4d5ce464ad818fd8a66e3ec84695f22fb8def92b4af27d44b"
     },
     "convex-backup": {
       "source": "get-convex/agent-skills",
@@ -95,7 +101,10 @@
       "source": "get-convex/agent-skills",
       "sourceType": "github",
       "skillPath": "skills/convex-create-component/SKILL.md",
-      "computedHash": "012acb639fccc22a47e89ef69941689f9328ac9ff5b872d77af6328407ec8876"
+      "commit": "f60629d7c6c1f27eb58a56260546d2445049274d",
+      "license": "MIT",
+      "syncedAt": "2026-11-13",
+      "computedHash": "641d2904a3aab8edacb11ef51c7bcf8a64b304d3f4e6a2ea040c5355f9333c37"
     },
     "convex-crons": {
       "source": "get-convex/agent-skills",
@@ -107,13 +116,19 @@
       "source": "get-convex/agent-skills",
       "sourceType": "github",
       "skillPath": "skills/convex-deploy-guard/SKILL.md",
-      "computedHash": "d6f6ae3b889457534c9ed7425a18b7b6916778ac108171ce1470895ce4f2ffd2"
+      "commit": "f60629d7c6c1f27eb58a56260546d2445049274d",
+      "license": "MIT",
+      "syncedAt": "2026-11-13",
+      "computedHash": "1e808b52cb21fb4f7ea3d0455591c71d8ee8070825a4201fdf6a26b09c8b50f3"
     },
     "convex-design": {
       "source": "get-convex/agent-skills",
       "sourceType": "github",
       "skillPath": "skills/convex-design/SKILL.md",
-      "computedHash": "70deb19ab30a2e1b960c86c68abb22f614cc95c5d09d4e440a40da5cf007fbdb"
+      "commit": "f60629d7c6c1f27eb58a56260546d2445049274d",
+      "license": "MIT",
+      "syncedAt": "2026-11-13",
+      "computedHash": "3eeadb195c11fb1bf5f35ec42592487f697f5b9bde6582386d9daf9ba10d4d14"
     },
     "convex-docs": {
       "source": "get-convex/agent-skills",
@@ -131,13 +146,19 @@
       "source": "get-convex/agent-skills",
       "sourceType": "github",
       "skillPath": "skills/convex-env/SKILL.md",
-      "computedHash": "0030e0e6a1ac20dea385007cdbc3a2e65aa0d074528d649be94f6c123c6f0854"
+      "commit": "f60629d7c6c1f27eb58a56260546d2445049274d",
+      "license": "MIT",
+      "syncedAt": "2026-11-13",
+      "computedHash": "c32111eb403409a100bd3702a95f1febf2e551cb73e936cf981255d5d57c7af7"
     },
     "convex-expert": {
       "source": "get-convex/agent-skills",
       "sourceType": "github",
       "skillPath": "skills/convex-expert/SKILL.md",
-      "computedHash": "2911e92e51807db1a6fa673babee0e80b96c6e4b0dcbebbf898a20c32349d213"
+      "commit": "f60629d7c6c1f27eb58a56260546d2445049274d",
+      "license": "MIT",
+      "syncedAt": "2026-11-13",
+      "computedHash": "5f1437f333902dcc030a1c9d8a46fe0b4a82741a36cfdb527120ea895359ec0a"
     },
     "convex-explain-app": {
       "source": "get-convex/agent-skills",
@@ -149,7 +170,10 @@
       "source": "get-convex/agent-skills",
       "sourceType": "github",
       "skillPath": "skills/convex-improve-convex-plugin/SKILL.md",
-      "computedHash": "35904eaf82eb083e859cfaf6ded5b713a0f1e7104d8b5a560d807994a50416ad"
+      "commit": "f60629d7c6c1f27eb58a56260546d2445049274d",
+      "license": "MIT",
+      "syncedAt": "2026-11-13",
+      "computedHash": "5933b9b20f3ea687418a5761f2905fccf669402f41d676c104a8804d696231b3"
     },
     "convex-insights": {
       "source": "get-convex/agent-skills",
@@ -191,7 +215,10 @@
       "source": "get-convex/agent-skills",
       "sourceType": "github",
       "skillPath": "skills/convex-quickstart/SKILL.md",
-      "computedHash": "cc2ab4e1228ea42baa818a0e9fad3ff401cdacc1199610bd9de78a3771676774"
+      "commit": "f60629d7c6c1f27eb58a56260546d2445049274d",
+      "license": "MIT",
+      "syncedAt": "2026-11-13",
+      "computedHash": "b1433c157ae613a5583fed0546dca236cb96b5b48e0effee486ecc95baa6bf5b"
     },
     "convex-reviewer": {
       "source": "get-convex/agent-skills",
@@ -324,10 +351,10 @@
       "source": "emilkowalski/skills",
       "sourceType": "github",
       "skillPath": "skills/improve-animations/SKILL.md",
-      "commit": "d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7",
+      "commit": "0f2e23b32bb1265e84cff8d3e75785fec953fb1b",
       "license": "MIT",
-      "syncedAt": "2026-08-23",
-      "computedHash": "68f17bbc4671593d2f43dba26a679243e2153ba5f26965fb7d59df52842534ff"
+      "syncedAt": "2026-11-13",
+      "computedHash": "0ceb25784b6660c280a59dea039d9b5d56eb7dc54804dc1b6a908e47a9923f16"
     },
     "improve-codebase-architecture": {
       "source": "mattpocock/skills",
@@ -342,19 +369,19 @@
       "source": "emilkowalski/skills",
       "sourceType": "github",
       "skillPath": "skills/mobile-native/SKILL.md",
-      "commit": "c8a79627b59d72d764d6ab6f2c87c09a48169833",
+      "commit": "0f2e23b32bb1265e84cff8d3e75785fec953fb1b",
       "license": "MIT",
-      "syncedAt": "2026-11-05",
-      "computedHash": "f221cea36642168df6d3d6d7f236237cbf1ae669138ff7df07775674223d49ad"
+      "syncedAt": "2026-11-13",
+      "computedHash": "19a47e318bfcb2a1c2be346b79219758b296437800cc6226d2cb467233403d17"
     },
     "review-animations": {
       "source": "emilkowalski/skills",
       "sourceType": "github",
       "skillPath": "skills/review-animations/SKILL.md",
-      "commit": "d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7",
+      "commit": "0f2e23b32bb1265e84cff8d3e75785fec953fb1b",
       "license": "MIT",
-      "syncedAt": "2026-08-23",
-      "computedHash": "61cf8ac0c4c8e1f63385298c546b16c65ca9aec34abddcd04e821c16712d671d"
+      "syncedAt": "2026-11-13",
+      "computedHash": "5ff2799f778472c996f548b240cea5a519980f8fe41ffe9e92e17db655c596b2"
     },
     "setup-matt-pocock-skills": {
       "source": "mattpocock/skills",
@@ -369,10 +396,10 @@
       "source": "shadcn-ui/ui",
       "sourceType": "github",
       "skillPath": "skills/shadcn/SKILL.md",
-      "commit": "1773ecfeeb4a04366978d353e69b5c7ded78dcb2",
+      "commit": "e62c9435fff729a175f38983dee73b2cb4f6a069",
       "license": "MIT",
-      "syncedAt": "2026-08-23",
-      "computedHash": "deba6c5152d9835892fa7dffeb1fedbb689ddac7e59e14e57ec5eaf9463309e4"
+      "syncedAt": "2026-11-13",
+      "computedHash": "b864a958765563321f485a96f4d59c0bb6539f4286ab6d8b8b66895b7ebd302d"
     },
     "tdd": {
       "source": "mattpocock/skills",
